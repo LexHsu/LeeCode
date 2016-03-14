@@ -4,6 +4,12 @@ Median of Two Sorted Arrays
 There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays.
 The overall run time complexity should be O(log (m+n)).
 
+
+中位数(Median)：是指将统计总体当中的各个值按大小顺序排列起来，形成一个数列，
+
+1. 如果值的个数为奇数个，则处于数列中间位置的值就称为中位数；
+2. 如果值的个数是偶数，则处于数列中间位置的两个值的平均值就称为中位数。
+
 ```java
 public double findMedianSortedArrays(int[] A, int[] B) {
         int m = A.length, n = B.length;
