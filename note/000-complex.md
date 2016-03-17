@@ -69,3 +69,5 @@
 ##### 2.3 迭代法
 
 [addr](http://wenku.baidu.com/link?url=89bvzgOuUgSNmoaDxlr44zl8VYiK1Cw4bgGLNK7LBpxc-bxBPXnbFf97C8cTtj1e4sPoYIGHTBmbUf5SwCgGW3jzh9TViQM0aQf40u_5kdO)
+
+[online formula](http://webdemo.myscript.com/#/demo/equation)
