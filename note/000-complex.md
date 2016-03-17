@@ -18,7 +18,8 @@
 算法时间复杂度和渐进算法时间复杂度在实际的算法分析过程中是不予区分的，渐进时间复杂度可以简称为时间复杂度，记为T(n)=O(f(n))。其中， “O”表示取数量级(阶)；
 函数f(n)是T(n)的同数量级(阶)函数，即:
 
-![formula](http://latex.codecogs.com/gif.latex?%5Clim_%7Bn%20%5Crightarrow%20%5Cinfty%7D%20%5Cfrac%7BT%28n%29%7D%7Bf%28n%29%7D%20%3D%20C)(C为不为零的常数)。
+![ \lim_{n \rightarrow  \infty} \frac{T(n)}{f(n)} = C](http://latex.codecogs.com/gif.latex?%5Clim_%7Bn%20%5Crightarrow%20%5Cinfty%7D%20%5Cfrac%7BT%28n%29%7D%7Bf%28n%29%7D%20%3D%20C)
+(注：C为不为零的常数)。
 
 它一般是算法中最大的语句频度，是最内层循环语句 的执行次数。 按数量级递增排列，
 
@@ -46,7 +47,9 @@
 
 ![f(n) = \sum_{i=1}^{n} \sum_{j=1}^{n} 1 = \sum_{i=1}^{n}n = n^{2}](http://latex.codecogs.com/gif.latex?f%28n%29%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Csum_%7Bj%3D1%7D%5E%7Bn%7D1%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7Dn%20%3D%20n%5E%7B2%7D)
 
-所以，该算法的时间复杂度为平方阶，记作T(n)=O(n2)。
+所以，该算法的时间复杂度为平方阶，记作：
+
+![T(n) = O(n^{2})](http://latex.codecogs.com/gif.latex?T%28n%29%20%3D%20O%28n%5E%7B2%7D%29)
 
 【例2】，有一算法如下：
 
@@ -60,7 +63,10 @@
 
 ![f(n) = \sum_{i=1}^{n} \sum_{j=1}^{i} \sum_{k=1}^{j} 1 = \sum_{i=1}^{n} \sum_{i=1}^{i} j = \sum_{i=1}^{n} \frac{i+1}{2}= \frac{n(n+1)(n+2)))}{6}](http://latex.codecogs.com/gif.latex?f%28n%29%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Csum_%7Bj%3D1%7D%5E%7Bi%7D%20%5Csum_%7Bk%3D1%7D%5E%7Bj%7D%201%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Csum_%7Bi%3D1%7D%5E%7Bi%7D%20j%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Cfrac%7Bi&plus;1%7D%7B2%7D%3D%20%5Cfrac%7Bn%28n&plus;1%29%28n&plus;2%29%29%29%7D%7B6%7D)
 
-所以，该算法的时间复杂度为立方阶，记作T(n)=O(n3)。
+所以，该算法的时间复杂度为立方阶，记作：
+
+
+![T(n) = O(n^{3})](http://latex.codecogs.com/gif.latex?T%28n%29%20%3D%20O%28n%5E%7B3%7D%29)
 
 【例3】，有如下算法：
 
@@ -71,8 +77,13 @@
 ```
 
 解：算法中频度最大的应该是语句③，它的执行次数与y有关，已知y初值为0，当(y+1)2>n时循环终止，则y的最大取值应该为
-(根号n)-1。所以语句③的频度可以通过求和公式得到，因此
+(根号n)-1。所以语句③的频度可以通过求和公式得到：
 
+![f(n) = \sum_{y=0}^{\sqrt{n}-1} 1 = \sqrt{n}](http://latex.codecogs.com/gif.latex?f%28n%29%20%3D%20%5Csum_%7By%3D0%7D%5E%7B%5Csqrt%7Bn%7D-1%7D%201%20%3D%20%5Csqrt%7Bn%7D)
+
+所以，该算法的时间复杂度记作：
+
+![T(n) = O(\sqrt{n})](http://latex.codecogs.com/gif.latex?T%28n%29%20%3D%20O%28%5Csqrt%7Bn%7D%29)
 
 ##### 2.2 假设法
 
