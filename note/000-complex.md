@@ -19,7 +19,8 @@
 函数f(n)是T(n)的同数量级(阶)函数，即:
 
 ![ \lim_{n \rightarrow  \infty} \frac{T(n)}{f(n)} = C](http://latex.codecogs.com/gif.latex?%5Clim_%7Bn%20%5Crightarrow%20%5Cinfty%7D%20%5Cfrac%7BT%28n%29%7D%7Bf%28n%29%7D%20%3D%20C)
-(注：C为不为零的常数)。
+
+(注：C为不为零的常数)
 
 它一般是算法中最大的语句频度，是最内层循环语句 的执行次数。 按数量级递增排列，
 
@@ -91,14 +92,11 @@
 
 [addr](http://wenku.baidu.com/link?url=89bvzgOuUgSNmoaDxlr44zl8VYiK1Cw4bgGLNK7LBpxc-bxBPXnbFf97C8cTtj1e4sPoYIGHTBmbUf5SwCgGW3jzh9TViQM0aQf40u_5kdO)
 
-[online formula](http://webdemo.myscript.com/#/demo/equation)
-
-```tex
-\sum_{x=0}^n f(x)
-```
 
 
 ### 附录
 
-[Github插入数学公式](http://www.trumanliu.com/github-markdown-math-formulas/)
-![equation](http://latex.codecogs.com/gif.latex?\frac{5+4+(2-3-(6+\frac{4}{5}))}{3(6-2)(2-7)})
+- [Github插入数学公式](http://www.trumanliu.com/github-markdown-math-formulas/)
+- [LaTex-CodeCogs](http://latex.codecogs.com/)
+- [sciweavers](http://www.sciweavers.org/free-online-latex-equation-editor)
+- [online draw formula]([online formula](http://webdemo.myscript.com/#/demo/equation))
