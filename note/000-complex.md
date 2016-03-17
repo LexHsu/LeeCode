@@ -17,7 +17,9 @@
 
 算法时间复杂度和渐进算法时间复杂度在实际的算法分析过程中是不予区分的，渐进时间复杂度可以简称为时间复杂度，记为T(n)=O(f(n))。其中， “O”表示取数量级(阶)；
 函数f(n)是T(n)的同数量级(阶)函数，即:
+
 ![formula](http://latex.codecogs.com/gif.latex?%5Clim_%7Bn%20%5Crightarrow%20%5Cinfty%7D%20%5Cfrac%7BT%28n%29%7D%7Bf%28n%29%7D%20%3D%20C)(C为不为零的常数)。
+
 它一般是算法中最大的语句频度，是最内层循环语句 的执行次数。 按数量级递增排列，
 
 
@@ -42,7 +44,7 @@
 ```
 解：以上算法中频度最大的是语句③，它的执行次数跟循环变量i和j有直接关系，因此其频度可以通过求和公式求得：
 
-![f(n)= \sum_{i=1}^{n} \sum_{j=1}^{n}1 = \sum_{i=1}^{n}n = n^{2}](http://latex.codecogs.com/gif.latex?f%28n%29%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Csum_%7Bj%3D1%7D%5E%7Bn%7D1%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7Dn%20%3D%20n%5E%7B2%7D)
+![f(n) = \sum_{i=1}^{n} \sum_{j=1}^{n} 1 = \sum_{i=1}^{n}n = n^{2}](http://latex.codecogs.com/gif.latex?f%28n%29%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Csum_%7Bj%3D1%7D%5E%7Bn%7D1%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7Dn%20%3D%20n%5E%7B2%7D)
 
 所以，该算法的时间复杂度为平方阶，记作T(n)=O(n2)。
 
@@ -54,9 +56,11 @@
 ③for(k=1;k<=j;k++)
 ④++x;
 ```
-解：以上算法中频度最大的是语句④，其频度可以通过求和公式求得
+解：以上算法中频度最大的是语句④，其频度可以通过求和公式求得：
 
-： 所以，该算法的时间复杂度为立方阶，记作T(n)=O(n3)。
+![f(n) = \sum_{i=1}^{n} \sum_{j=1}^{i} \sum_{k=1}^{j} 1 = \sum_{i=1}^{n} \sum_{i=1}^{i} j = \sum_{i=1}^{n} \frac{i+1}{2}= \frac{n(n+1)(n+2)))}{6}](http://latex.codecogs.com/gif.latex?f%28n%29%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Csum_%7Bj%3D1%7D%5E%7Bi%7D%20%5Csum_%7Bk%3D1%7D%5E%7Bj%7D%201%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Csum_%7Bi%3D1%7D%5E%7Bi%7D%20j%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Cfrac%7Bi&plus;1%7D%7B2%7D%3D%20%5Cfrac%7Bn%28n&plus;1%29%28n&plus;2%29%29%29%7D%7B6%7D)
+
+所以，该算法的时间复杂度为立方阶，记作T(n)=O(n3)。
 
 【例3】，有如下算法：
 
