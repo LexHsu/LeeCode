@@ -39,12 +39,14 @@
 
 【例1】，有算法如下：
 
+```java
+for(i = 1; i <= n; i++) {        // 语句1
+  for(j = 1; j <= n; j++) {      // 语句2
+    ++x;                         // 语句3
+  }
+}
 ```
-①for(i=1;i<=n;i++)
-②for(j=1;j<=n;j++)
-③++x;
-```
-解：以上算法中频度最大的是语句③，它的执行次数跟循环变量i和j有直接关系，因此其频度可以通过求和公式求得：
+解：以上算法中频度最大的是语句3，它的执行次数跟循环变量i和j有直接关系，因此其频度可以通过求和公式求得：
 
 ![f(n) = \sum_{i=1}^{n} \sum_{j=1}^{n} 1 = \sum_{i=1}^{n}n = n^{2}](http://latex.codecogs.com/gif.latex?f%28n%29%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Csum_%7Bj%3D1%7D%5E%7Bn%7D1%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7Dn%20%3D%20n%5E%7B2%7D)
 
@@ -54,13 +56,16 @@
 
 【例2】，有一算法如下：
 
+```java
+for(i = 1; i <= n; i++) {         // 语句1
+  for(j = 1; j <= i; j++) {       // 语句2
+    for(k = 1; k <= j; k++) {     // 语句3
+      ++x;                        // 语句4
+    }
+  }
+}
 ```
-①for(i=1;i<=n;i++)
-②for(j=1;j<=i;j++)
-③for(k=1;k<=j;k++)
-④++x;
-```
-解：以上算法中频度最大的是语句④，其频度可以通过求和公式求得：
+解：以上算法中频度最大的是语句4，其频度可以通过求和公式求得：
 
 ![f(n) = \sum_{i=1}^{n} \sum_{j=1}^{i} \sum_{k=1}^{j} 1 = \sum_{i=1}^{n} \sum_{i=1}^{i} j = \sum_{i=1}^{n} \frac{i+1}{2}= \frac{n(n+1)(n+2)))}{6}](http://latex.codecogs.com/gif.latex?f%28n%29%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Csum_%7Bj%3D1%7D%5E%7Bi%7D%20%5Csum_%7Bk%3D1%7D%5E%7Bj%7D%201%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Csum_%7Bi%3D1%7D%5E%7Bi%7D%20j%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Cfrac%7Bi&plus;1%7D%7B2%7D%3D%20%5Cfrac%7Bn%28n&plus;1%29%28n&plus;2%29%29%29%7D%7B6%7D)
 
@@ -71,10 +76,11 @@
 
 【例3】，有如下算法：
 
-```
-①y=0;
-②while((y+1)2<=n)
-③x++;
+```java
+y = 0;                          // 语句1
+while( ((y+1) * 2) <= n) {      // 语句2
+  x++;                          // 语句3
+}
 ```
 
 解：算法中频度最大的应该是语句③，它的执行次数与y有关，已知y初值为0，当(y+1)2>n时循环终止，则y的最大取值应该为
@@ -90,7 +96,7 @@
 
 ##### 2.3 迭代法
 
-[addr](http://wenku.baidu.com/link?url=89bvzgOuUgSNmoaDxlr44zl8VYiK1Cw4bgGLNK7LBpxc-bxBPXnbFf97C8cTtj1e4sPoYIGHTBmbUf5SwCgGW3jzh9TViQM0aQf40u_5kdO)
+
 
 
 
@@ -99,4 +105,5 @@
 - [Github插入数学公式](http://www.trumanliu.com/github-markdown-math-formulas/)
 - [LaTex-CodeCogs](http://latex.codecogs.com/)
 - [sciweavers](http://www.sciweavers.org/free-online-latex-equation-editor)
-- [online draw formula]([online formula](http://webdemo.myscript.com/#/demo/equation))
+- [online draw formula](http://webdemo.myscript.com/#/demo/equation)
+- [addr](http://wenku.baidu.com/link?url=89bvzgOuUgSNmoaDxlr44zl8VYiK1Cw4bgGLNK7LBpxc-bxBPXnbFf97C8cTtj1e4sPoYIGHTBmbUf5SwCgGW3jzh9TViQM0aQf40u_5kdO)
