@@ -78,7 +78,7 @@ for(i = 1; i <= n; i++) {         // 语句1
 
 ```java
 y = 0;                          // 语句1
-while( ((y+1) * 2) <= n) {      // 语句2
+while(((y+1) * 2) <= n) {      // 语句2
   x++;                          // 语句3
 }
 ```
@@ -101,8 +101,6 @@ while( ((y+1) * 2) <= n) {      // 语句2
 
 
 ### 附录
-
-- [Github插入数学公式](http://www.trumanliu.com/github-markdown-math-formulas/)
 - [LaTex-CodeCogs](http://latex.codecogs.com/)
 - [sciweavers](http://www.sciweavers.org/free-online-latex-equation-editor)
 - [online draw formula](http://webdemo.myscript.com/#/demo/equation)
