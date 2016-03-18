@@ -195,3 +195,8 @@ void fun(int a[], int n, int k) {
 - [sciweavers](http://www.sciweavers.org/free-online-latex-equation-editor)
 - [online draw formula](http://webdemo.myscript.com/#/demo/equation)
 - [addr](http://wenku.baidu.com/link?url=89bvzgOuUgSNmoaDxlr44zl8VYiK1Cw4bgGLNK7LBpxc-bxBPXnbFf97C8cTtj1e4sPoYIGHTBmbUf5SwCgGW3jzh9TViQM0aQf40u_5kdO)
+
+![sigma](img/sigma.jpg)
+
+∑符号数学中的求和符号，读音为sigma，其中i表示下界，n表示上界， k从i开始取数，一直取到n,全部加起来。
+∑ i 这样表达也可以，表示对i求和，i是变数
