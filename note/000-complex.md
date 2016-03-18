@@ -139,22 +139,29 @@ while (s < n) {
 
 解：假设循环执行k次，则有：
 
+```
 k=1时，i=1，s=0+1
 k=2时，i=2，s=0+1+2
 k=3时，i=3，s=0+1+2+3
 ...
+```
+
 执行到k次时：
+
 ![i = k, s = 0+1+2+3+...+ k = \frac{k(k +1)}{2}](http://latex.codecogs.com/gif.latex?i%20%3D%20k%2C%20s%20%3D%200&plus;1&plus;2&plus;3&plus;...&plus;%20k%20%3D%20%5Cfrac%7Bk%28k%20&plus;1%29%7D%7B2%7D)
 
 而 s < n，即：
 
 ![\frac{k(k +1)}{2} \leqslant n - 1](http://latex.codecogs.com/gif.latex?%5Cfrac%7Bk%28k%20&plus;1%29%7D%7B2%7D%20%5Cleqslant%20n%20-%201)
 
-因此，
+因此：
+
 ![f(n) = k = \left | \frac{-1 + \sqrt{3n+1}}{2} \right |](http://latex.codecogs.com/gif.latex?f%28n%29%20%3D%20k%20%3D%20%5Cleft%20%7C%20%5Cfrac%7B-1%20&plus;%20%5Csqrt%7B3n&plus;1%7D%7D%7B2%7D%20%5Cright%20%7C)
 
-该算法时间复杂度为
+该算法时间复杂度为：
+
 ![T(n) = O(\sqrt{n})](http://latex.codecogs.com/gif.latex?T%28n%29%20%3D%20O%28%5Csqrt%7Bn%7D%29)
+
 
 ##### 2.3 迭代法
 当算法中包含递归函数时，其时间复杂度也会被转化为一个递归方程，上述两种方法此时不再适用。递归方程的形式多种多样，其求解方法也是不一而足，比较常用是迭代法。其基本步骤是迭代地展开递归方程的右端，使之成为一个非递归的和式，然后通过对和式的估计来得到时间复杂度T(n)。
