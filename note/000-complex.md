@@ -40,10 +40,10 @@
 【例1】，有算法如下：
 
 ```java
-for(i = 1; i <= n; i++) {        // 语句1
-  for(j = 1; j <= n; j++) {      // 语句2
-    ++x;                         // 语句3
-  }
+for(i = 1; i <= n; i++) {            // 语句1
+    for(j = 1; j <= n; j++) {        // 语句2
+        ++x;                         // 语句3
+    }
 }
 ```
 解：以上算法中频度最大的是语句3，它的执行次数跟循环变量i和j有直接关系，因此其频度可以通过求和公式求得：
@@ -57,17 +57,17 @@ for(i = 1; i <= n; i++) {        // 语句1
 【例2】，有一算法如下：
 
 ```java
-for(i = 1; i <= n; i++) {         // 语句1
-  for(j = 1; j <= i; j++) {       // 语句2
-    for(k = 1; k <= j; k++) {     // 语句3
-      ++x;                        // 语句4
+for(i = 1; i <= n; i++) {               // 语句1
+    for(j = 1; j <= i; j++) {           // 语句2
+        for(k = 1; k <= j; k++) {       // 语句3
+            ++x;                        // 语句4
+        }
     }
-  }
 }
 ```
 解：以上算法中频度最大的是语句4，其频度可以通过求和公式求得：
 
-![f(n) = \sum_{i=1}^{n} \sum_{j=1}^{i} \sum_{k=1}^{j} 1 = \sum_{i=1}^{n} \sum_{i=1}^{i} j = \sum_{i=1}^{n} \frac{i+1}{2}= \frac{n(n+1)(n+2)))}{6}](http://latex.codecogs.com/gif.latex?f%28n%29%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Csum_%7Bj%3D1%7D%5E%7Bi%7D%20%5Csum_%7Bk%3D1%7D%5E%7Bj%7D%201%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Csum_%7Bi%3D1%7D%5E%7Bi%7D%20j%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Cfrac%7Bi&plus;1%7D%7B2%7D%3D%20%5Cfrac%7Bn%28n&plus;1%29%28n&plus;2%29%29%29%7D%7B6%7D)
+![f(n) = \sum_{i=1}^{n} \sum_{j=1}^{i} \sum_{k=1}^{j} 1 = \sum_{i=1}^{n} \sum_{j=1}^{i} j = n^{3}](http://latex.codecogs.com/gif.latex?f%28n%29%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Csum_%7Bj%3D1%7D%5E%7Bi%7D%20%5Csum_%7Bk%3D1%7D%5E%7Bj%7D%201%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Csum_%7Bj%3D1%7D%5E%7Bi%7D%20j%20%3D%20n%5E%7B3%7D)
 
 所以，该算法的时间复杂度为立方阶，记作：
 
@@ -77,9 +77,9 @@ for(i = 1; i <= n; i++) {         // 语句1
 【例3】，有如下算法：
 
 ```java
-y = 0;                          // 语句1
-while(((y+1) * 2) <= n) {      // 语句2
-  x++;                          // 语句3
+y = 0;                            // 语句1
+while(((y+1) * 2) <= n) {         // 语句2
+    x++;                          // 语句3
 }
 ```
 
@@ -94,11 +94,94 @@ while(((y+1) * 2) <= n) {      // 语句2
 
 ##### 2.2 假设法
 
+在某些较为复杂的算法中，循环结构的循环次数很难直接看出，特别是当循环次数与循环体中的某些语句执行有联系时，语句频度的计算变得比较困难。此时，可以先假设循环执行次数为k次，再对算法进行分析，根据循环终止条件求出语句频度f(n)，最后求出T(n)。
+
+【例4】有一算法如下：
+```java
+x = 91;
+y = 100;
+while (y > 0) {
+    if (x > 100) {
+        x -= 10;
+        y--;
+    } else {
+        x++;
+    }
+}
+
+```
+
+解：假设 while 循环的循环体执行k次，可以发现：
+
+```
+k=1时，x=92，y=100
+k=2时，x=93，y=100
+k=3时，x=94，y=100
+...
+k=10时，x=101，y=100
+k=11时，x=91，y=99
+...
+k=22时，x=91，y=98
+```
+
+可见每循环11次，y的值发生一次变化，y需共变化100次。
+所以，f(n) = 100 * 11 =1100。则该算法的执行时间是一个与问题规模n无关的常数，它不随着问题规模n的增加而增长，即使算法中有上千条语句，其执行时间也不过是一个较大的常数。因此，该算法的时间复杂度为常数阶，记作T(n)=O(1)。
+
+【例5】有如下算法：
+```java
+i = 0;
+s = 0;
+while (s < n) {
+    i++;
+    s = s + i;
+}
+```
+
+解：假设循环执行k次，则有：
+
+k=1时，i=1，s=0+1
+k=2时，i=2，s=0+1+2
+k=3时，i=3，s=0+1+2+3
+...
+执行到k次时：
+![i = k, s = 0+1+2+3+...+ k = \frac{k(k +1)}{2}](http://latex.codecogs.com/gif.latex?i%20%3D%20k%2C%20s%20%3D%200&plus;1&plus;2&plus;3&plus;...&plus;%20k%20%3D%20%5Cfrac%7Bk%28k%20&plus;1%29%7D%7B2%7D)
+
+而 s < n，即：
+
+![\frac{k(k +1)}{2} \leqslant n - 1](http://latex.codecogs.com/gif.latex?%5Cfrac%7Bk%28k%20&plus;1%29%7D%7B2%7D%20%5Cleqslant%20n%20-%201)
+
+因此，
+![f(n) = k = \left | \frac{-1 + \sqrt{3n+1}}{2} \right |](http://latex.codecogs.com/gif.latex?f%28n%29%20%3D%20k%20%3D%20%5Cleft%20%7C%20%5Cfrac%7B-1%20&plus;%20%5Csqrt%7B3n&plus;1%7D%7D%7B2%7D%20%5Cright%20%7C)
+
+该算法时间复杂度为
+![T(n) = O(\sqrt{n})](http://latex.codecogs.com/gif.latex?T%28n%29%20%3D%20O%28%5Csqrt%7Bn%7D%29)
+
 ##### 2.3 迭代法
+当算法中包含递归函数时，其时间复杂度也会被转化为一个递归方程，上述两种方法此时不再适用。递归方程的形式多种多样，其求解方法也是不一而足，比较常用是迭代法。其基本步骤是迭代地展开递归方程的右端，使之成为一个非递归的和式，然后通过对和式的估计来得到时间复杂度T(n)。
 
+【例6】有如下算法：
+```java
+void fun(int a[], int n, int k) {
+    int i = 0;
+    if (k == n-1) {
+        for (i=0; i < n; i++) {
+            printf("%d",a[i]);
+        }
+    } else {
+        for( i = k; i < n; i++) {
+            a[i] = a[i] + i;
+        }
+        fun(a, n, k + 1);
+    }
+}
+```
+解：设fun(a, n, k)的执行时间为T(k)，由算法可以得到时间复杂度的递归关系如下：
 
+![T(k) = \left\{\begin{matrix} n, & k== n-1 \\ T(k+1)+(n-k), & k \neq n-1 \end{matrix}\right.](http://latex.codecogs.com/gif.latex?T%28k%29%20%3D%20%5Cleft%5C%7B%5Cbegin%7Bmatrix%7D%20n%2C%20%26%20k%3D%3D%20n-1%20%5C%5C%20T%28k&plus;1%29&plus;%28n-k%29%2C%20%26%20k%20%5Cneq%20n-1%20%5Cend%7Bmatrix%7D%5Cright.)
 
+时间复杂度如下：
 
+![T(0)=T(1)+n= T(2)+(n-1)+n=...=T(n-1)+2+...+(n-1)+n=n+\frac{(n+2)(n-1)}{2} =O(n^{2})](http://latex.codecogs.com/gif.latex?T%280%29%3DT%281%29&plus;n%3D%20T%282%29&plus;%28n-1%29&plus;n%3D...%3DT%28n-1%29&plus;2&plus;...&plus;%28n-1%29&plus;n%3Dn&plus;%5Cfrac%7B%28n&plus;2%29%28n-1%29%7D%7B2%7D%20%3DO%28n%5E%7B2%7D%29)
 
 ### 附录
 - [LaTex-CodeCogs](http://latex.codecogs.com/)
