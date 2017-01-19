@@ -19,8 +19,6 @@ The return format had been changed to zero-based indices. Please read the above 
 
 一个数组中两个位置上的数的和恰为 target，求这两个位置。
 
-```
-
 ```java
 public class Solution {
     
